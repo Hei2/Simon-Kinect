@@ -1,0 +1,20 @@
+C:\Users\User\Desktop\NDSU\CSCI\313 - Software Development for Games\Team Project\Code\KinectSetupDev\KinectSetupDev\obj\x86\Debug\KinectSetupDev.csprojResolveAssemblyReference.cache
+C:\Users\User\Desktop\NDSU\CSCI\313 - Software Development for Games\Team Project\Code\KinectSetupDev\KinectSetupDev\obj\x86\Debug\MainWindow.baml
+C:\Users\User\Desktop\NDSU\CSCI\313 - Software Development for Games\Team Project\Code\KinectSetupDev\KinectSetupDev\obj\x86\Debug\MainWindow.g.cs
+C:\Users\User\Desktop\NDSU\CSCI\313 - Software Development for Games\Team Project\Code\KinectSetupDev\KinectSetupDev\obj\x86\Debug\App.g.cs
+C:\Users\User\Desktop\NDSU\CSCI\313 - Software Development for Games\Team Project\Code\KinectSetupDev\KinectSetupDev\obj\x86\Debug\KinectSetupDev_MarkupCompile.cache
+C:\Users\User\Desktop\NDSU\CSCI\313 - Software Development for Games\Team Project\Code\KinectSetupDev\KinectSetupDev\obj\x86\Debug\KinectSetupDev.g.resources
+C:\Users\User\Desktop\NDSU\CSCI\313 - Software Development for Games\Team Project\Code\KinectSetupDev\KinectSetupDev\obj\x86\Debug\KinectSetupDev.Properties.Resources.resources
+C:\Users\User\Desktop\NDSU\CSCI\313 - Software Development for Games\Team Project\Code\KinectSetupDev\KinectSetupDev\obj\x86\Debug\KinectSetupDev.csproj.GenerateResource.Cache
+C:\Users\User\Desktop\NDSU\CSCI\313 - Software Development for Games\Team Project\Code\KinectSetupDev\KinectSetupDev\bin\Debug\KinectSetupDev.exe
+C:\Users\User\Desktop\NDSU\CSCI\313 - Software Development for Games\Team Project\Code\KinectSetupDev\KinectSetupDev\bin\Debug\KinectSetupDev.pdb
+C:\Users\User\Desktop\NDSU\CSCI\313 - Software Development for Games\Team Project\Code\KinectSetupDev\KinectSetupDev\bin\Debug\Coding4Fun.Kinect.Wpf.dll
+C:\Users\User\Desktop\NDSU\CSCI\313 - Software Development for Games\Team Project\Code\KinectSetupDev\KinectSetupDev\bin\Debug\Microsoft.Samples.Kinect.WpfViewers.dll
+C:\Users\User\Desktop\NDSU\CSCI\313 - Software Development for Games\Team Project\Code\KinectSetupDev\KinectSetupDev\bin\Debug\Microsoft.Samples.Kinect.WpfViewers.pdb
+C:\Users\User\Desktop\NDSU\CSCI\313 - Software Development for Games\Team Project\Code\KinectSetupDev\KinectSetupDev\obj\x86\Debug\KinectSetupDev.exe
+C:\Users\User\Desktop\NDSU\CSCI\313 - Software Development for Games\Team Project\Code\KinectSetupDev\KinectSetupDev\obj\x86\Debug\KinectSetupDev.pdb
+C:\Users\User\Desktop\NDSU\CSCI\313 - Software Development for Games\Team Project\Code\KinectSetupDev\KinectSetupDev\bin\Debug\KinectSetupDev.exe.config
+C:\Users\User\Desktop\NDSU\CSCI\313 - Software Development for Games\Team Project\Code\KinectSetupDev\KinectSetupDev\bin\Debug\Microsoft.Kinect.Toolkit.dll
+C:\Users\User\Desktop\HCI Project\KinectSetupDev\KinectSetupDev\bin\Debug\KinectSetupDev.exe.config
+C:\Users\User\Desktop\HCI Project\KinectSetupDev\KinectSetupDev\obj\x86\Debug\KinectSetupDev.exe
+C:\Users\User\Desktop\HCI Project\KinectSetupDev\KinectSetupDev\obj\x86\Debug\KinectSetupDev.pdb
