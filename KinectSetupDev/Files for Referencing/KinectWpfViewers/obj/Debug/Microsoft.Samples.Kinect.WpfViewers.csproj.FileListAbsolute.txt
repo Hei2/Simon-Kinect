@@ -1,0 +1,46 @@
+C:\Users\User\Desktop\Kinect Stuff\Installed Stuff\KinectWpfViewers\bin\Debug\Microsoft.Samples.Kinect.WpfViewers.dll
+C:\Users\User\Desktop\Kinect Stuff\Installed Stuff\KinectWpfViewers\bin\Debug\Microsoft.Samples.Kinect.WpfViewers.pdb
+C:\Users\User\Desktop\Kinect Stuff\Installed Stuff\KinectWpfViewers\obj\Debug\Microsoft.Samples.Kinect.WpfViewers.csprojResolveAssemblyReference.cache
+C:\Users\User\Desktop\Kinect Stuff\Installed Stuff\KinectWpfViewers\obj\Debug\KinectAudioViewer.g.cs
+C:\Users\User\Desktop\Kinect Stuff\Installed Stuff\KinectWpfViewers\obj\Debug\KinectDepthViewer.g.cs
+C:\Users\User\Desktop\Kinect Stuff\Installed Stuff\KinectWpfViewers\obj\Debug\KinectColorViewer.g.cs
+C:\Users\User\Desktop\Kinect Stuff\Installed Stuff\KinectWpfViewers\obj\Debug\KinectSettings.g.cs
+C:\Users\User\Desktop\Kinect Stuff\Installed Stuff\KinectWpfViewers\obj\Debug\KinectSkeletonViewer.g.cs
+C:\Users\User\Desktop\Kinect Stuff\Installed Stuff\KinectWpfViewers\obj\Debug\KinectVoiceCommandViewer.g.cs
+C:\Users\User\Desktop\Kinect Stuff\Installed Stuff\KinectWpfViewers\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\User\Desktop\Kinect Stuff\Installed Stuff\KinectWpfViewers\obj\Debug\Microsoft.Samples.Kinect.WpfViewers_MarkupCompile.cache
+C:\Users\User\Desktop\Kinect Stuff\Installed Stuff\KinectWpfViewers\obj\Debug\Microsoft.Samples.Kinect.WpfViewers_MarkupCompile.lref
+C:\Users\User\Desktop\Kinect Stuff\Installed Stuff\KinectWpfViewers\obj\Debug\KinectAudioViewer.baml
+C:\Users\User\Desktop\Kinect Stuff\Installed Stuff\KinectWpfViewers\obj\Debug\KinectDepthViewer.baml
+C:\Users\User\Desktop\Kinect Stuff\Installed Stuff\KinectWpfViewers\obj\Debug\KinectColorViewer.baml
+C:\Users\User\Desktop\Kinect Stuff\Installed Stuff\KinectWpfViewers\obj\Debug\KinectSettings.baml
+C:\Users\User\Desktop\Kinect Stuff\Installed Stuff\KinectWpfViewers\obj\Debug\KinectSkeletonViewer.baml
+C:\Users\User\Desktop\Kinect Stuff\Installed Stuff\KinectWpfViewers\obj\Debug\KinectVoiceCommandViewer.baml
+C:\Users\User\Desktop\Kinect Stuff\Installed Stuff\KinectWpfViewers\obj\Debug\Microsoft.Samples.Kinect.WpfViewers.g.resources
+C:\Users\User\Desktop\Kinect Stuff\Installed Stuff\KinectWpfViewers\obj\Debug\Microsoft.Samples.Kinect.WpfViewers.Properties.Resources.resources
+C:\Users\User\Desktop\Kinect Stuff\Installed Stuff\KinectWpfViewers\obj\Debug\Microsoft.Samples.Kinect.WpfViewers.csproj.GenerateResource.Cache
+C:\Users\User\Desktop\Kinect Stuff\Installed Stuff\KinectWpfViewers\obj\Debug\Microsoft.Samples.Kinect.WpfViewers.dll
+C:\Users\User\Desktop\Kinect Stuff\Installed Stuff\KinectWpfViewers\obj\Debug\Microsoft.Samples.Kinect.WpfViewers.pdb
+C:\Users\User\Desktop\HCI Project\KinectSetupDev\Files for Referencing\KinectWpfViewers\bin\Debug\Microsoft.Samples.Kinect.WpfViewers.dll
+C:\Users\User\Desktop\HCI Project\KinectSetupDev\Files for Referencing\KinectWpfViewers\bin\Debug\Microsoft.Samples.Kinect.WpfViewers.pdb
+C:\Users\User\Desktop\HCI Project\KinectSetupDev\Files for Referencing\KinectWpfViewers\obj\Debug\Microsoft.Samples.Kinect.WpfViewers.csprojResolveAssemblyReference.cache
+C:\Users\User\Desktop\HCI Project\KinectSetupDev\Files for Referencing\KinectWpfViewers\obj\Debug\KinectAudioViewer.g.cs
+C:\Users\User\Desktop\HCI Project\KinectSetupDev\Files for Referencing\KinectWpfViewers\obj\Debug\KinectDepthViewer.g.cs
+C:\Users\User\Desktop\HCI Project\KinectSetupDev\Files for Referencing\KinectWpfViewers\obj\Debug\KinectColorViewer.g.cs
+C:\Users\User\Desktop\HCI Project\KinectSetupDev\Files for Referencing\KinectWpfViewers\obj\Debug\KinectSettings.g.cs
+C:\Users\User\Desktop\HCI Project\KinectSetupDev\Files for Referencing\KinectWpfViewers\obj\Debug\KinectSkeletonViewer.g.cs
+C:\Users\User\Desktop\HCI Project\KinectSetupDev\Files for Referencing\KinectWpfViewers\obj\Debug\KinectVoiceCommandViewer.g.cs
+C:\Users\User\Desktop\HCI Project\KinectSetupDev\Files for Referencing\KinectWpfViewers\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\User\Desktop\HCI Project\KinectSetupDev\Files for Referencing\KinectWpfViewers\obj\Debug\Microsoft.Samples.Kinect.WpfViewers_MarkupCompile.cache
+C:\Users\User\Desktop\HCI Project\KinectSetupDev\Files for Referencing\KinectWpfViewers\obj\Debug\Microsoft.Samples.Kinect.WpfViewers_MarkupCompile.lref
+C:\Users\User\Desktop\HCI Project\KinectSetupDev\Files for Referencing\KinectWpfViewers\obj\Debug\KinectAudioViewer.baml
+C:\Users\User\Desktop\HCI Project\KinectSetupDev\Files for Referencing\KinectWpfViewers\obj\Debug\KinectDepthViewer.baml
+C:\Users\User\Desktop\HCI Project\KinectSetupDev\Files for Referencing\KinectWpfViewers\obj\Debug\KinectColorViewer.baml
+C:\Users\User\Desktop\HCI Project\KinectSetupDev\Files for Referencing\KinectWpfViewers\obj\Debug\KinectSettings.baml
+C:\Users\User\Desktop\HCI Project\KinectSetupDev\Files for Referencing\KinectWpfViewers\obj\Debug\KinectSkeletonViewer.baml
+C:\Users\User\Desktop\HCI Project\KinectSetupDev\Files for Referencing\KinectWpfViewers\obj\Debug\KinectVoiceCommandViewer.baml
+C:\Users\User\Desktop\HCI Project\KinectSetupDev\Files for Referencing\KinectWpfViewers\obj\Debug\Microsoft.Samples.Kinect.WpfViewers.g.resources
+C:\Users\User\Desktop\HCI Project\KinectSetupDev\Files for Referencing\KinectWpfViewers\obj\Debug\Microsoft.Samples.Kinect.WpfViewers.Properties.Resources.resources
+C:\Users\User\Desktop\HCI Project\KinectSetupDev\Files for Referencing\KinectWpfViewers\obj\Debug\Microsoft.Samples.Kinect.WpfViewers.csproj.GenerateResource.Cache
+C:\Users\User\Desktop\HCI Project\KinectSetupDev\Files for Referencing\KinectWpfViewers\obj\Debug\Microsoft.Samples.Kinect.WpfViewers.dll
+C:\Users\User\Desktop\HCI Project\KinectSetupDev\Files for Referencing\KinectWpfViewers\obj\Debug\Microsoft.Samples.Kinect.WpfViewers.pdb
