@@ -30,31 +30,35 @@ namespace KinectSetupDev
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
+            this.SensorChooserUI.KinectSensorChooser = _sensorChooser;
             _sensorChooser.KinectChanged += new EventHandler<KinectChangedEventArgs>(_sensorChooser_KinectChanged);
             _sensorChooser.Start();
         }
 
         void _sensorChooser_KinectChanged(object sender, KinectChangedEventArgs e)
         {
-            //throw new NotImplementedException();
-
             KinectSensor oldSensor = e.OldSensor;
 
             StopKinect(oldSensor);
 
             KinectSensor newSensor = e.NewSensor;
 
-            newSensor.ColorStream.Enable();
-            newSensor.DepthStream.Enable();
-            newSensor.SkeletonStream.Enable();
-            //newSensor.AllFramesReady += new EventHandler<AllFramesReadyEventArgs>(_sensor_AllFramesReady);
-            try
+            //Had to manually add this if statement to ensure it doesn't crash
+            if (newSensor != null)
             {
-                newSensor.Start();
-            }
-            catch (System.IO.IOException)
-            {
-                _sensorChooser.TryResolveConflict();
+                newSensor.ColorStream.Enable();
+                newSensor.DepthStream.Enable();
+                newSensor.SkeletonStream.Enable();
+
+                //newSensor.AllFramesReady += new EventHandler<AllFramesReadyEventArgs>(_sensor_AllFramesReady);
+                try
+                {
+                    newSensor.Start();
+                }
+                catch (System.IO.IOException)
+                {
+                    _sensorChooser.TryResolveConflict();
+                }
             }
         }
 
@@ -80,7 +84,7 @@ namespace KinectSetupDev
             if (sensor != null)
             {
                 sensor.Stop();
-                sensor.AudioSource.Stop();
+                //sensor.AudioSource.Stop(); //Commented this out because the audio source never got started
             }
         }
 
