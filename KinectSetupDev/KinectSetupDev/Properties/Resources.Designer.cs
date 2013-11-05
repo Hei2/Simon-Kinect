@@ -24,6 +24,16 @@ namespace KinectSetupDev.Properties
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     internal class Resources
     {
+        /// <summary>
+        ///   Looks up a localized string similar to No ready Kinect found!.
+        /// </summary>
+        internal static string NoKinectReady
+        {
+            get
+            {
+                return ResourceManager.GetString("NoKinectReady", resourceCulture);
+            }
+        }
 
         private static global::System.Resources.ResourceManager resourceMan;
 

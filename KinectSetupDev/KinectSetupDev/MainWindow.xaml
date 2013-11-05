@@ -3,7 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:kt="clr-namespace:Microsoft.Kinect.Toolkit;assembly=Microsoft.Kinect.Toolkit" xmlns:WpfViewers="clr-namespace:Microsoft.Samples.Kinect.WpfViewers;assembly=Microsoft.Samples.Kinect.WpfViewers" x:Class="KinectSetupDev.MainWindow"
         Title="MainWindow" Height="350" Width="525" Closing="Window_Closing" Loaded="Window_Loaded">
-    <kt:KinectSensorChooserUI x:Name="SensorChooserUI" DataContext="{Binding}" Width="320" Height="240" >
-        <WpfViewers:KinectColorViewer x:Name="kinect" HorizontalAlignment="Left" Height="240" Margin="10,10,0,0" VerticalAlignment="Top" Width="300" KinectSensorManager="{Binding ElementName=SensorChooserUI, Mode=OneWay}"/>
-    </kt:KinectSensorChooserUI>
+    <Viewbox Grid.Row="1" Stretch="Uniform" HorizontalAlignment="Center">
+        <Image Name="Image" Width="640" Height="480"/>
+    </Viewbox>
 </Window>
