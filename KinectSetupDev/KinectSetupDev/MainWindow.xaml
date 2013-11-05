@@ -1,6 +1,9 @@
-﻿<Window x:Class="KinectSetupDev.MainWindow"
+﻿<Window
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="MainWindow" Height="350" Width="525" Closing="Window_Closing" Loaded="Window_Loaded" xmlns:kt="clr-namespace:Microsoft.Kinect.Toolkit;assembly=Microsoft.Kinect.Toolkit">
-        <kt:KinectSensorChooserUI x:Name="SensorChooserUI" DataContext="{Binding}" Width="320" Height="240" />
+        xmlns:kt="clr-namespace:Microsoft.Kinect.Toolkit;assembly=Microsoft.Kinect.Toolkit" xmlns:WpfViewers="clr-namespace:Microsoft.Samples.Kinect.WpfViewers;assembly=Microsoft.Samples.Kinect.WpfViewers" x:Class="KinectSetupDev.MainWindow"
+        Title="MainWindow" Height="350" Width="525" Closing="Window_Closing" Loaded="Window_Loaded">
+    <kt:KinectSensorChooserUI x:Name="SensorChooserUI" DataContext="{Binding}" Width="320" Height="240" >
+        <WpfViewers:KinectColorViewer x:Name="kinect" HorizontalAlignment="Left" Height="240" Margin="10,10,0,0" VerticalAlignment="Top" Width="300" KinectSensorManager="{Binding ElementName=SensorChooserUI, Mode=OneWay}"/>
+    </kt:KinectSensorChooserUI>
 </Window>
