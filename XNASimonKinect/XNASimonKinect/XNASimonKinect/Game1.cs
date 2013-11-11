@@ -10,7 +10,7 @@ using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Media;
 //For Kinect
 using Microsoft.Kinect;
-using System.Windows.Media.Imaging; //For drawing the Kinect's camera to screen
+//using System.Windows.Media.Imaging; //For drawing the Kinect's camera to screen
 
 namespace XNASimonKinect
 {
@@ -23,15 +23,15 @@ namespace XNASimonKinect
         SpriteBatch spriteBatch;
 
         //Probably need to do checking to make sure one is connected/update this when it is reconnected.
-        KinectSensor sensor = KinectSensor.KinectSensors[0];
+        KinectSensor sensor;
+        //Not entirely sure if these are needed yet
+        //Hopefully used
+        SkeletonFrame skeletonFrame;
+        ImageFrame depthFrame;
+        ColorImageFrame colorImageFrame;
 
         Texture2D kinectCamera;
-
-        //Bitmap that will hold color information
-        private WriteableBitmap colorBitmap;
-
-        //Intermediate storage for the color data received from the camera
-        private byte[] colorPixels;
+        byte[] kinectCameraByteArray;
 
         public Game1()
         {
@@ -48,6 +48,22 @@ namespace XNASimonKinect
         protected override void Initialize()
         {
             // TODO: Add your initialization logic here
+
+            sensor = KinectSensor.KinectSensors[0];
+            sensor.Start();
+            sensor.ColorStream.Enable(ColorImageFormat.RgbResolution640x480Fps30);
+            sensor.DepthStream.Enable();
+            sensor.SkeletonStream.Enable();
+
+            kinectCamera = new Texture2D(GraphicsDevice, 640, 480);
+
+            //Just putting this here for now.
+            if (colorImageFrame != null)
+            {
+                kinectCameraByteArray = new byte[colorImageFrame.PixelDataLength];
+                colorImageFrame.CopyPixelDataTo(kinectCameraByteArray);
+                kinectCamera.SetData(kinectCameraByteArray);
+            }
 
             base.Initialize();
         }
@@ -86,6 +102,25 @@ namespace XNASimonKinect
 
             // TODO: Add your update logic here
 
+            //Hopefully this is the right thing to do. Update all of these frame objects each update cycle.
+            skeletonFrame = sensor.SkeletonStream.OpenNextFrame(0);
+            depthFrame = sensor.DepthStream.OpenNextFrame(0);
+            colorImageFrame = sensor.ColorStream.OpenNextFrame(0);
+
+            if (colorImageFrame != null)
+            {
+                kinectCameraByteArray = new byte[colorImageFrame.PixelDataLength];
+                colorImageFrame.CopyPixelDataTo(kinectCameraByteArray);
+            }
+ 
+            //int stride = colorFrame.Width * 4;
+            //image1.Source = BitmapSource.Create(colorFrame.Width, colorFrame.Height, 96, 96, PixelFormats.Bgr32, null, pixels, stride);
+
+            //Assumed that this all needs to be at the end
+            /*colorImageFrame.Dispose();
+            depthFrame.Dispose();
+            skeletonFrame.Dispose();*/
+
             base.Update(gameTime);
         }
 
@@ -98,6 +133,10 @@ namespace XNASimonKinect
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
             // TODO: Add your drawing code here
+
+            spriteBatch.Begin(SpriteSortMode.Deferred, null, null, null, null, null);
+            spriteBatch.Draw(kinectCamera, new Rectangle(0, 0, 640, 480), Color.White);
+            spriteBatch.End();
 
             base.Draw(gameTime);
         }
