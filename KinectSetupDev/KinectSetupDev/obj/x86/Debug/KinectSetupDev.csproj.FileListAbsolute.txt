@@ -30,3 +30,20 @@ C:\Users\User\Desktop\HCI Project\KinectSetupDev\KinectSetupDev\bin\Debug\Kinect
 C:\Users\User\Desktop\HCI Project\KinectSetupDev\KinectSetupDev\bin\Debug\KinectSetupDev.pdb
 C:\Users\User\Desktop\HCI Project\KinectSetupDev\KinectSetupDev\bin\Debug\Coding4Fun.Kinect.Wpf.dll
 C:\Users\User\Desktop\HCI Project\KinectSetupDev\KinectSetupDev\bin\Debug\Microsoft.Kinect.Toolkit.dll
+C:\Users\User\Documents\GitHub\Simon-Kinect\KinectSetupDev\KinectSetupDev\bin\Debug\KinectSetupDev.exe.config
+C:\Users\User\Documents\GitHub\Simon-Kinect\KinectSetupDev\KinectSetupDev\obj\x86\Debug\KinectSetupDev.exe
+C:\Users\User\Documents\GitHub\Simon-Kinect\KinectSetupDev\KinectSetupDev\obj\x86\Debug\KinectSetupDev.pdb
+C:\Users\User\Documents\GitHub\Simon-Kinect\KinectSetupDev\KinectSetupDev\bin\Debug\KinectSetupDev.exe
+C:\Users\User\Documents\GitHub\Simon-Kinect\KinectSetupDev\KinectSetupDev\bin\Debug\KinectSetupDev.pdb
+C:\Users\User\Documents\GitHub\Simon-Kinect\KinectSetupDev\KinectSetupDev\bin\Debug\Coding4Fun.Kinect.Wpf.dll
+C:\Users\User\Documents\GitHub\Simon-Kinect\KinectSetupDev\KinectSetupDev\bin\Debug\Microsoft.Kinect.Toolkit.dll
+C:\Users\User\Documents\GitHub\Simon-Kinect\KinectSetupDev\KinectSetupDev\bin\Debug\Microsoft.Samples.Kinect.WpfViewers.dll
+C:\Users\User\Documents\GitHub\Simon-Kinect\KinectSetupDev\KinectSetupDev\bin\Debug\Microsoft.Samples.Kinect.WpfViewers.pdb
+C:\Users\User\Documents\GitHub\Simon-Kinect\KinectSetupDev\KinectSetupDev\obj\x86\Debug\KinectSetupDev.csprojResolveAssemblyReference.cache
+C:\Users\User\Documents\GitHub\Simon-Kinect\KinectSetupDev\KinectSetupDev\obj\x86\Debug\MainWindow.baml
+C:\Users\User\Documents\GitHub\Simon-Kinect\KinectSetupDev\KinectSetupDev\obj\x86\Debug\MainWindow.g.cs
+C:\Users\User\Documents\GitHub\Simon-Kinect\KinectSetupDev\KinectSetupDev\obj\x86\Debug\App.g.cs
+C:\Users\User\Documents\GitHub\Simon-Kinect\KinectSetupDev\KinectSetupDev\obj\x86\Debug\KinectSetupDev_MarkupCompile.cache
+C:\Users\User\Documents\GitHub\Simon-Kinect\KinectSetupDev\KinectSetupDev\obj\x86\Debug\KinectSetupDev.g.resources
+C:\Users\User\Documents\GitHub\Simon-Kinect\KinectSetupDev\KinectSetupDev\obj\x86\Debug\KinectSetupDev.Properties.Resources.resources
+C:\Users\User\Documents\GitHub\Simon-Kinect\KinectSetupDev\KinectSetupDev\obj\x86\Debug\KinectSetupDev.csproj.GenerateResource.Cache
