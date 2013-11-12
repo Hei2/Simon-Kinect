@@ -23,6 +23,18 @@ namespace MGSimonKinect
         //Probably need to do checking to make sure one is connected/update this when it is reconnected.
         KinectSensor sensor;
 
+        public enum GameState { StartMenu, HowToPlayMenu, OptionsMenu, Loading, PauseMenu, CreditsMenu, Playing }
+        GameState currentGameState;
+        GameState prevGameState; //May not need this one
+        public GameState gameState
+        {
+            get { return currentGameState; }
+            set { prevGameState = currentGameState; currentGameState = value; }
+        }
+
+        // Menus.
+        StartMenu startMenu;
+
         Texture2D kinectCamera;
         byte[] kinectCameraByteArray;
 
@@ -30,6 +42,8 @@ namespace MGSimonKinect
             : base()
         {
             graphics = new GraphicsDeviceManager(this);
+            graphics.PreferredBackBufferWidth = 1280;
+            graphics.PreferredBackBufferHeight = 720;
             Content.RootDirectory = "Content";
         }
 
@@ -51,6 +65,8 @@ namespace MGSimonKinect
 
             kinectCamera = new Texture2D(GraphicsDevice, 640, 480);
 
+            gameState = GameState.StartMenu;
+
             base.Initialize();
         }
 
@@ -64,6 +80,8 @@ namespace MGSimonKinect
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
             // TODO: use this.Content to load your game content here
+
+            startMenu = new StartMenu(this, GraphicsDevice.Viewport.Bounds, Content.Load<Texture2D>(@"Images\Menus\StartMenu\QuitButton"));
         }
 
         /// <summary>
@@ -87,9 +105,9 @@ namespace MGSimonKinect
 
             // TODO: Add your update logic here
 
-            //Hopefully this is the right thing to do. Update all of these frame objects each update cycle.
-            //SkeletonFrame skeletonFrame = sensor.SkeletonStream.OpenNextFrame(0);
-            //ImageFrame depthFrame = sensor.DepthStream.OpenNextFrame(0);
+            //Update all of these frame objects each update cycle.
+            /*SkeletonFrame skeletonFrame = sensor.SkeletonStream.OpenNextFrame(0);
+            ImageFrame depthFrame = sensor.DepthStream.OpenNextFrame(0);*/
             ColorImageFrame colorImageFrame = sensor.ColorStream.OpenNextFrame(0);
 
             if (colorImageFrame != null)
@@ -107,10 +125,18 @@ namespace MGSimonKinect
                 }
 
                 kinectCamera.SetData(bgraPixelData);
+                colorImageFrame.Dispose();
+            }
+
+            switch (gameState)
+            {
+                case GameState.StartMenu:
+                    startMenu.Update(gameTime);
+                    break;
             }
 
             //Assumed that this all needs to be at the end
-            colorImageFrame.Dispose();
+            //colorImageFrame.Dispose();
             //depthFrame.Dispose();
             //skeletonFrame.Dispose();
 
@@ -123,13 +149,21 @@ namespace MGSimonKinect
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Draw(GameTime gameTime)
         {
-            GraphicsDevice.Clear(Color.CornflowerBlue);
+            GraphicsDevice.Clear(Color.Black);
 
             // TODO: Add your drawing code here
 
             spriteBatch.Begin(SpriteSortMode.Deferred, null, null, null, null, null);
-            spriteBatch.Draw(kinectCamera, new Rectangle(0, 0, 640, 480), Color.White);
+            //spriteBatch.Draw(kinectCamera, new Rectangle(0, 0, 640, 480), Color.White);
+            spriteBatch.Draw(kinectCamera, Vector2.Zero, new Rectangle(0, 0, kinectCamera.Width, kinectCamera.Height), Color.White, 0f, Vector2.Zero, 0.25f, SpriteEffects.None, 0);
             spriteBatch.End();
+
+            switch (gameState)
+            {
+                case GameState.StartMenu:
+                    startMenu.Draw(gameTime, spriteBatch);
+                    break;
+            }
 
             base.Draw(gameTime);
         }

@@ -8,3 +8,4 @@ C:\Users\User\Documents\GitHub\Simon-Kinect\MGSimonKinect\MGSimonKinect\bin\Wind
 C:\Users\User\Documents\GitHub\Simon-Kinect\MGSimonKinect\MGSimonKinect\obj\x86\Debug\MGSimonKinect.csprojResolveAssemblyReference.cache
 C:\Users\User\Documents\GitHub\Simon-Kinect\MGSimonKinect\MGSimonKinect\obj\x86\Debug\MGSimonKinect.exe
 C:\Users\User\Documents\GitHub\Simon-Kinect\MGSimonKinect\MGSimonKinect\obj\x86\Debug\MGSimonKinect.pdb
+C:\Users\User\Documents\GitHub\Simon-Kinect\MGSimonKinect\MGSimonKinect\bin\WindowsGL\Debug\Content\Images\Menus\StartMenu\QuitButton.png
