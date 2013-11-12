@@ -1,6 +1,0 @@
-C:\Users\User\Documents\GitHub\Simon-Kinect\XNASimonKinect\XNASimonKinect\XNASimonKinect\bin\x86\Debug\XNASimonKinect.exe
-C:\Users\User\Documents\GitHub\Simon-Kinect\XNASimonKinect\XNASimonKinect\XNASimonKinect\bin\x86\Debug\XNASimonKinect.pdb
-C:\Users\User\Documents\GitHub\Simon-Kinect\XNASimonKinect\XNASimonKinect\XNASimonKinect\obj\x86\Debug\XNASimonKinect.csprojResolveAssemblyReference.cache
-C:\Users\User\Documents\GitHub\Simon-Kinect\XNASimonKinect\XNASimonKinect\XNASimonKinect\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
-C:\Users\User\Documents\GitHub\Simon-Kinect\XNASimonKinect\XNASimonKinect\XNASimonKinect\obj\x86\Debug\XNASimonKinect.exe
-C:\Users\User\Documents\GitHub\Simon-Kinect\XNASimonKinect\XNASimonKinect\XNASimonKinect\obj\x86\Debug\XNASimonKinect.pdb

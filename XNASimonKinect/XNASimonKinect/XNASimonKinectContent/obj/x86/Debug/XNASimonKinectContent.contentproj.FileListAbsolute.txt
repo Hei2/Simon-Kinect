@@ -1,1 +1,0 @@
-C:\Users\User\Documents\GitHub\Simon-Kinect\XNASimonKinect\XNASimonKinect\XNASimonKinectContent\obj\x86\Debug\XNASimonKinectContent.contentprojResolveAssemblyReference.cache

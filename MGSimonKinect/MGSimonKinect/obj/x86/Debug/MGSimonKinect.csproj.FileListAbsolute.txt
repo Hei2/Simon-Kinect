@@ -1,0 +1,10 @@
+C:\Users\User\Documents\GitHub\Simon-Kinect\MGSimonKinect\MGSimonKinect\bin\WindowsGL\Debug\SDL.dll
+C:\Users\User\Documents\GitHub\Simon-Kinect\MGSimonKinect\MGSimonKinect\bin\WindowsGL\Debug\MGSimonKinect.exe
+C:\Users\User\Documents\GitHub\Simon-Kinect\MGSimonKinect\MGSimonKinect\bin\WindowsGL\Debug\MGSimonKinect.pdb
+C:\Users\User\Documents\GitHub\Simon-Kinect\MGSimonKinect\MGSimonKinect\bin\WindowsGL\Debug\Lidgren.Network.dll
+C:\Users\User\Documents\GitHub\Simon-Kinect\MGSimonKinect\MGSimonKinect\bin\WindowsGL\Debug\MonoGame.Framework.dll
+C:\Users\User\Documents\GitHub\Simon-Kinect\MGSimonKinect\MGSimonKinect\bin\WindowsGL\Debug\OpenTK.dll
+C:\Users\User\Documents\GitHub\Simon-Kinect\MGSimonKinect\MGSimonKinect\bin\WindowsGL\Debug\Tao.Sdl.dll
+C:\Users\User\Documents\GitHub\Simon-Kinect\MGSimonKinect\MGSimonKinect\obj\x86\Debug\MGSimonKinect.csprojResolveAssemblyReference.cache
+C:\Users\User\Documents\GitHub\Simon-Kinect\MGSimonKinect\MGSimonKinect\obj\x86\Debug\MGSimonKinect.exe
+C:\Users\User\Documents\GitHub\Simon-Kinect\MGSimonKinect\MGSimonKinect\obj\x86\Debug\MGSimonKinect.pdb
