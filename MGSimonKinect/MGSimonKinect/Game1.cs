@@ -22,11 +22,6 @@ namespace MGSimonKinect
 
         //Probably need to do checking to make sure one is connected/update this when it is reconnected.
         KinectSensor sensor;
-        //Not entirely sure if these are needed yet
-        //Hopefully used
-        /*SkeletonFrame skeletonFrame;
-        ImageFrame depthFrame;
-        ColorImageFrame colorImageFrame;*/
 
         Texture2D kinectCamera;
         byte[] kinectCameraByteArray;
@@ -55,14 +50,6 @@ namespace MGSimonKinect
             sensor.SkeletonStream.Enable();
 
             kinectCamera = new Texture2D(GraphicsDevice, 640, 480);
-
-            //Just putting this here for now.
-            /*if (colorImageFrame != null)
-            {
-                kinectCameraByteArray = new byte[colorImageFrame.PixelDataLength];
-                colorImageFrame.CopyPixelDataTo(kinectCameraByteArray);
-                kinectCamera.SetData(kinectCameraByteArray);
-            }*/
 
             base.Initialize();
         }
@@ -101,26 +88,31 @@ namespace MGSimonKinect
             // TODO: Add your update logic here
 
             //Hopefully this is the right thing to do. Update all of these frame objects each update cycle.
-            SkeletonFrame skeletonFrame = sensor.SkeletonStream.OpenNextFrame(0);
-            ImageFrame depthFrame = sensor.DepthStream.OpenNextFrame(0);
+            //SkeletonFrame skeletonFrame = sensor.SkeletonStream.OpenNextFrame(0);
+            //ImageFrame depthFrame = sensor.DepthStream.OpenNextFrame(0);
             ColorImageFrame colorImageFrame = sensor.ColorStream.OpenNextFrame(0);
-
-            /*skeletonFrame = sensor.SkeletonStream.OpenNextFrame(0);
-            depthFrame = sensor.DepthStream.OpenNextFrame(0);
-            colorImageFrame = sensor.ColorStream.OpenNextFrame(0);*/
 
             if (colorImageFrame != null)
             {
                 kinectCameraByteArray = new byte[colorImageFrame.PixelDataLength];
                 colorImageFrame.CopyPixelDataTo(kinectCameraByteArray);
-                kinectCamera.SetData(kinectCameraByteArray);
-                //kinectCamera
+                //Convert RGBA to BGRA
+                Byte[] bgraPixelData = new Byte[colorImageFrame.PixelDataLength];
+                for (int i = 0; i < kinectCameraByteArray.Length; i += 4)
+                {
+                    bgraPixelData[i] = kinectCameraByteArray[i + 2];
+                    bgraPixelData[i + 1] = kinectCameraByteArray[i + 1];
+                    bgraPixelData[i + 2] = kinectCameraByteArray[i];
+                    bgraPixelData[i + 3] = (Byte)255; //The video comes with 0 alpha so it is transparent
+                }
+
+                kinectCamera.SetData(bgraPixelData);
             }
 
             //Assumed that this all needs to be at the end
             colorImageFrame.Dispose();
-            depthFrame.Dispose();
-            skeletonFrame.Dispose();
+            //depthFrame.Dispose();
+            //skeletonFrame.Dispose();
 
             base.Update(gameTime);
         }
