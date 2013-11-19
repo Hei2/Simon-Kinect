@@ -136,7 +136,6 @@ namespace MGSimonKinect
             }
 
             //Assumed that this all needs to be at the end
-            //colorImageFrame.Dispose();
             //depthFrame.Dispose();
             //skeletonFrame.Dispose();
 
@@ -154,8 +153,8 @@ namespace MGSimonKinect
             // TODO: Add your drawing code here
 
             spriteBatch.Begin(SpriteSortMode.Deferred, null, null, null, null, null);
-            //spriteBatch.Draw(kinectCamera, new Rectangle(0, 0, 640, 480), Color.White);
-            spriteBatch.Draw(kinectCamera, Vector2.Zero, new Rectangle(0, 0, kinectCamera.Width, kinectCamera.Height), Color.White, 0f, Vector2.Zero, 0.25f, SpriteEffects.None, 0);
+            //spriteBatch.Draw(kinectCamera, new Rectangle(0, 0, 320, 240), Color.White);
+            spriteBatch.Draw(kinectCamera, new Vector2(graphics.PreferredBackBufferWidth - kinectCamera.Width / 4, graphics.PreferredBackBufferHeight - kinectCamera.Height / 4), new Rectangle(0, 0, kinectCamera.Width, kinectCamera.Height), Color.White, 0f, Vector2.Zero, 0.5f, SpriteEffects.None, 0);
             spriteBatch.End();
 
             switch (gameState)

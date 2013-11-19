@@ -33,7 +33,7 @@ namespace MGSimonKinect
             Rectangle mouseClickRect = new Rectangle(x, y, 1, 1);
 
             if (mouseClickRect.Intersects(quitButtonRect)) game.Exit();
-        }     
+        }
 
         public void Update(GameTime gameTime)
         {
