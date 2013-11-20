@@ -38,6 +38,16 @@ namespace MGSimonKinect
         Texture2D kinectCamera;
         byte[] kinectCameraByteArray;
 
+        //Use these for drawing the hands to the screen.
+        Vector3 rightHandVector3 = new Vector3(Vector2.Zero, 0f);
+        Texture2D rightHandTexture;
+
+        //TESTING
+        int testInt;
+        Texture2D rightHandTexture2;
+        Texture2D rightHandTexture3;
+        //TESTING
+
         public Game1()
             : base()
         {
@@ -82,6 +92,10 @@ namespace MGSimonKinect
             // TODO: use this.Content to load your game content here
 
             startMenu = new StartMenu(this, GraphicsDevice.Viewport.Bounds, Content.Load<Texture2D>(@"Images\Menus\StartMenu\QuitButton"));
+            rightHandTexture = Content.Load<Texture2D>(@"Images\Cursors\ExampleHand");
+
+            rightHandTexture2 = Content.Load<Texture2D>(@"Images\Cursors\ExampleHand2");
+            rightHandTexture3 = Content.Load<Texture2D>(@"Images\Cursors\ExampleHand3");
         }
 
         /// <summary>
@@ -106,9 +120,33 @@ namespace MGSimonKinect
             // TODO: Add your update logic here
 
             //Update all of these frame objects each update cycle.
-            /*SkeletonFrame skeletonFrame = sensor.SkeletonStream.OpenNextFrame(0);
-            ImageFrame depthFrame = sensor.DepthStream.OpenNextFrame(0);*/
+            SkeletonFrame skeletonFrame = sensor.SkeletonStream.OpenNextFrame(0);
+            //ImageFrame depthFrame = sensor.DepthStream.OpenNextFrame(0);
             ColorImageFrame colorImageFrame = sensor.ColorStream.OpenNextFrame(0);
+
+            if (skeletonFrame != null)
+            {
+                testInt = 1;
+                Skeleton[] skeleton = new Skeleton[skeletonFrame.SkeletonArrayLength];
+                skeletonFrame.CopySkeletonDataTo(skeleton);
+
+                foreach (Skeleton skel in skeleton)
+                {
+                    testInt = 2;
+                    if (skel.TrackingState.Equals(SkeletonTrackingState.Tracked))
+                    {
+                        testInt = 3;
+                        Joint rightHandJoint = skel.Joints[JointType.HandRight];
+                        //Need to find the correct values for translating the X and Y coords to the screen.
+                        //rightHandVector3 = new Vector3(rightHandJoint.Position.X * 1000 + (graphics.PreferredBackBufferWidth / 2), -rightHandJoint.Position.Y * 1000 + (graphics.PreferredBackBufferHeight / 2), rightHandJoint.Position.Z);
+                        rightHandVector3 = new Vector3(rightHandJoint.Position.X * (graphics.PreferredBackBufferWidth / sensor.DepthStream.FrameWidth) * 600 + (graphics.PreferredBackBufferWidth / 2), -rightHandJoint.Position.Y * (graphics.PreferredBackBufferHeight / sensor.DepthStream.FrameHeight) * 500 + (graphics.PreferredBackBufferHeight / 2) + 175, rightHandJoint.Position.Z);
+
+                        break;
+                    }
+                }
+
+                skeletonFrame.Dispose();
+            }
 
             if (colorImageFrame != null)
             {
@@ -155,6 +193,12 @@ namespace MGSimonKinect
             spriteBatch.Begin(SpriteSortMode.Deferred, null, null, null, null, null);
             //spriteBatch.Draw(kinectCamera, new Rectangle(0, 0, 320, 240), Color.White);
             spriteBatch.Draw(kinectCamera, new Vector2(graphics.PreferredBackBufferWidth - kinectCamera.Width / 4, graphics.PreferredBackBufferHeight - kinectCamera.Height / 4), new Rectangle(0, 0, kinectCamera.Width, kinectCamera.Height), Color.White, 0f, Vector2.Zero, 0.5f, SpriteEffects.None, 0);
+            switch (testInt)
+            {
+                case 1: spriteBatch.Draw(rightHandTexture, new Vector2(rightHandVector3.X, rightHandVector3.Y), Color.White); break;
+                case 2: spriteBatch.Draw(rightHandTexture2, new Vector2(rightHandVector3.X, rightHandVector3.Y), Color.White); break;
+                case 3: spriteBatch.Draw(rightHandTexture3, new Vector2(rightHandVector3.X, rightHandVector3.Y), Color.White); break;
+            }
             spriteBatch.End();
 
             switch (gameState)
@@ -162,7 +206,7 @@ namespace MGSimonKinect
                 case GameState.StartMenu:
                     startMenu.Draw(gameTime, spriteBatch);
                     break;
-            }
+            }   
 
             base.Draw(gameTime);
         }

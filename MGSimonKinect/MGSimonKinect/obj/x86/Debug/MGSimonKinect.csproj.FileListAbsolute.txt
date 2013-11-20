@@ -9,3 +9,6 @@ C:\Users\User\Documents\GitHub\Simon-Kinect\MGSimonKinect\MGSimonKinect\obj\x86\
 C:\Users\User\Documents\GitHub\Simon-Kinect\MGSimonKinect\MGSimonKinect\obj\x86\Debug\MGSimonKinect.exe
 C:\Users\User\Documents\GitHub\Simon-Kinect\MGSimonKinect\MGSimonKinect\obj\x86\Debug\MGSimonKinect.pdb
 C:\Users\User\Documents\GitHub\Simon-Kinect\MGSimonKinect\MGSimonKinect\bin\WindowsGL\Debug\Content\Images\Menus\StartMenu\QuitButton.png
+C:\Users\User\Documents\GitHub\Simon-Kinect\MGSimonKinect\MGSimonKinect\bin\WindowsGL\Debug\Content\Images\Cursors\ExampleHand.png
+C:\Users\User\Documents\GitHub\Simon-Kinect\MGSimonKinect\MGSimonKinect\bin\WindowsGL\Debug\Content\Images\Cursors\ExampleHand2.png
+C:\Users\User\Documents\GitHub\Simon-Kinect\MGSimonKinect\MGSimonKinect\bin\WindowsGL\Debug\Content\Images\Cursors\ExampleHand3.png
