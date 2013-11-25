@@ -39,9 +39,11 @@ namespace MGSimonKinect
         byte[] kinectCameraByteArray;
 
         //Use these for drawing the hands to the screen.
-        Vector3 rightHandVector3 = new Vector3(Vector2.Zero, 0f);
+        public Vector3 rightHandVector3 = new Vector3(Vector2.Zero, 0f);
         Texture2D rightHandTexture;
+        public Vector3 oldRightHandVector3 = new Vector3(Vector2.Zero, 0f);
 
+        //Might keep these because it helps determine if the Kinect is tracking somebody.
         //TESTING
         int testInt;
         Texture2D rightHandTexture2;
@@ -68,7 +70,10 @@ namespace MGSimonKinect
             // TODO: Add your initialization logic here
 
             sensor = KinectSensor.KinectSensors[0];
-            sensor.Start();
+            //while (sensor.Status.Equals(KinectStatus.NotReady))
+            //{
+                sensor.Start();
+            //}
             sensor.ColorStream.Enable(ColorImageFormat.RgbResolution640x480Fps30);
             sensor.DepthStream.Enable();
             sensor.SkeletonStream.Enable();
@@ -120,11 +125,11 @@ namespace MGSimonKinect
             // TODO: Add your update logic here
 
             //Update all of these frame objects each update cycle.
-            SkeletonFrame skeletonFrame = sensor.SkeletonStream.OpenNextFrame(0);
+            //SkeletonFrame skeletonFrame = sensor.SkeletonStream.OpenNextFrame(0);
             //ImageFrame depthFrame = sensor.DepthStream.OpenNextFrame(0);
             ColorImageFrame colorImageFrame = sensor.ColorStream.OpenNextFrame(0);
 
-            if (skeletonFrame != null)
+            /*if (skeletonFrame != null)
             {
                 testInt = 1;
                 Skeleton[] skeleton = new Skeleton[skeletonFrame.SkeletonArrayLength];
@@ -138,15 +143,22 @@ namespace MGSimonKinect
                         testInt = 3;
                         Joint rightHandJoint = skel.Joints[JointType.HandRight];
                         //Need to find the correct values for translating the X and Y coords to the screen.
-                        //rightHandVector3 = new Vector3(rightHandJoint.Position.X * 1000 + (graphics.PreferredBackBufferWidth / 2), -rightHandJoint.Position.Y * 1000 + (graphics.PreferredBackBufferHeight / 2), rightHandJoint.Position.Z);
-                        rightHandVector3 = new Vector3(rightHandJoint.Position.X * (graphics.PreferredBackBufferWidth / sensor.DepthStream.FrameWidth) * 600 + (graphics.PreferredBackBufferWidth / 2), -rightHandJoint.Position.Y * (graphics.PreferredBackBufferHeight / sensor.DepthStream.FrameHeight) * 500 + (graphics.PreferredBackBufferHeight / 2) + 175, rightHandJoint.Position.Z);
+                        
+                        float x = rightHandJoint.Position.X * (graphics.PreferredBackBufferWidth / sensor.DepthStream.FrameWidth) * sensor.DepthStream.FrameWidth + (graphics.PreferredBackBufferWidth / 2);
+                        //float y = -rightHandJoint.Position.Y * (graphics.PreferredBackBufferHeight / sensor.DepthStream.FrameHeight) * sensor.DepthStream.FrameHeight + (graphics.PreferredBackBufferHeight / 2);
+                        float y = -rightHandJoint.Position.Y * (graphics.PreferredBackBufferHeight / sensor.DepthStream.FrameHeight) * sensor.DepthStream.FrameHeight + (graphics.PreferredBackBufferHeight / 2) + 150;
+                        float z = rightHandJoint.Position.Z;
+
+                        //rightHandVector3 = new Vector3(rightHandJoint.Position.X * (graphics.PreferredBackBufferWidth / sensor.DepthStream.FrameWidth) * sensor.DepthStream.FrameWidth + (graphics.PreferredBackBufferWidth / 2), -rightHandJoint.Position.Y * (graphics.PreferredBackBufferHeight / sensor.DepthStream.FrameHeight) * sensor.DepthStream.FrameHeight + (graphics.PreferredBackBufferHeight / 2), rightHandJoint.Position.Z * 200);
+                        rightHandVector3 = new Vector3(x, y, z);
 
                         break;
                     }
                 }
 
+                oldRightHandVector3 = rightHandVector3;
                 skeletonFrame.Dispose();
-            }
+            }*/
 
             if (colorImageFrame != null)
             {
@@ -192,23 +204,60 @@ namespace MGSimonKinect
 
             spriteBatch.Begin(SpriteSortMode.Deferred, null, null, null, null, null);
             //spriteBatch.Draw(kinectCamera, new Rectangle(0, 0, 320, 240), Color.White);
-            spriteBatch.Draw(kinectCamera, new Vector2(graphics.PreferredBackBufferWidth - kinectCamera.Width / 4, graphics.PreferredBackBufferHeight - kinectCamera.Height / 4), new Rectangle(0, 0, kinectCamera.Width, kinectCamera.Height), Color.White, 0f, Vector2.Zero, 0.5f, SpriteEffects.None, 0);
+            spriteBatch.Draw(kinectCamera, new Vector2(graphics.PreferredBackBufferWidth - kinectCamera.Width / 2, graphics.PreferredBackBufferHeight - kinectCamera.Height / 2), new Rectangle(0, 0, kinectCamera.Width, kinectCamera.Height), Color.White, 0f, Vector2.Zero, 0.5f, SpriteEffects.None, 0);
             switch (testInt)
             {
-                case 1: spriteBatch.Draw(rightHandTexture, new Vector2(rightHandVector3.X, rightHandVector3.Y), Color.White); break;
-                case 2: spriteBatch.Draw(rightHandTexture2, new Vector2(rightHandVector3.X, rightHandVector3.Y), Color.White); break;
-                case 3: spriteBatch.Draw(rightHandTexture3, new Vector2(rightHandVector3.X, rightHandVector3.Y), Color.White); break;
+                case 1: spriteBatch.Draw(rightHandTexture, new Vector2(rightHandVector3.X - (rightHandTexture.Width / 2), rightHandVector3.Y - (rightHandTexture.Height / 2)), Color.White); break;
+                case 2: spriteBatch.Draw(rightHandTexture2, new Vector2(rightHandVector3.X - (rightHandTexture2.Width / 2), rightHandVector3.Y - (rightHandTexture2.Height / 2)), Color.White); break;
+                case 3: spriteBatch.Draw(rightHandTexture3, new Vector2(rightHandVector3.X - (rightHandTexture3.Width / 2), rightHandVector3.Y - (rightHandTexture3.Height / 2)), Color.White); break;
             }
             spriteBatch.End();
 
             switch (gameState)
             {
-                case GameState.StartMenu:
-                    startMenu.Draw(gameTime, spriteBatch);
-                    break;
+                case GameState.StartMenu: startMenu.Draw(gameTime, spriteBatch); break;
             }   
 
             base.Draw(gameTime);
+        }
+
+        //Position information for the right hand can be gotten here instead of within the updat method.
+        //This way, if multiple classes need to access this information, it isn't being run at the same time
+        //over and over.
+        public Vector3 GetRightHandState()
+        {
+            SkeletonFrame skeletonFrame = sensor.SkeletonStream.OpenNextFrame(0);
+
+            if (skeletonFrame != null)
+            {
+                testInt = 1;
+                Skeleton[] skeleton = new Skeleton[skeletonFrame.SkeletonArrayLength];
+                skeletonFrame.CopySkeletonDataTo(skeleton);
+
+                foreach (Skeleton skel in skeleton)
+                {
+                    testInt = 2;
+                    if (skel.TrackingState.Equals(SkeletonTrackingState.Tracked))
+                    {
+                        testInt = 3;
+                        Joint rightHandJoint = skel.Joints[JointType.HandRight];
+                        //Need to find the correct values for translating the X and Y coords to the screen.
+
+                        float x = rightHandJoint.Position.X * (graphics.PreferredBackBufferWidth / sensor.DepthStream.FrameWidth) * sensor.DepthStream.FrameWidth + (graphics.PreferredBackBufferWidth / 2);
+                        //float y = -rightHandJoint.Position.Y * (graphics.PreferredBackBufferHeight / sensor.DepthStream.FrameHeight) * sensor.DepthStream.FrameHeight + (graphics.PreferredBackBufferHeight / 2);
+                        float y = -rightHandJoint.Position.Y * (graphics.PreferredBackBufferHeight / sensor.DepthStream.FrameHeight) * sensor.DepthStream.FrameHeight + (graphics.PreferredBackBufferHeight / 2) + 150;
+                        float z = rightHandJoint.Position.Z;
+
+                        //rightHandVector3 = new Vector3(rightHandJoint.Position.X * (graphics.PreferredBackBufferWidth / sensor.DepthStream.FrameWidth) * sensor.DepthStream.FrameWidth + (graphics.PreferredBackBufferWidth / 2), -rightHandJoint.Position.Y * (graphics.PreferredBackBufferHeight / sensor.DepthStream.FrameHeight) * sensor.DepthStream.FrameHeight + (graphics.PreferredBackBufferHeight / 2), rightHandJoint.Position.Z * 200);
+                        rightHandVector3 = new Vector3(x, y, z);
+
+                        break;
+                    }
+                }
+                skeletonFrame.Dispose();
+            }
+
+            return rightHandVector3;
         }
     }
 }

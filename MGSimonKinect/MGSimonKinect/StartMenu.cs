@@ -18,6 +18,8 @@ namespace MGSimonKinect
         Game1 game;
         MouseState mouseState;
         MouseState previousMouseState;
+        Vector3 rightHandState;
+        Vector3 previousRightHandState;
 
         public StartMenu(Game1 game, Rectangle gameWindow, Texture2D quitButtonSprite)
         {
@@ -38,13 +40,22 @@ namespace MGSimonKinect
         public void Update(GameTime gameTime)
         {
             mouseState = Mouse.GetState();
+            rightHandState = game.GetRightHandState();
 
             if (previousMouseState.LeftButton == ButtonState.Pressed && mouseState.LeftButton == ButtonState.Released)
             {
                 MouseClicked(mouseState.X, mouseState.Y);
             }
 
+            //If Kinect hand made a click gesture
+            //.00847
+            if (-(rightHandState.Z - previousRightHandState.Z) > 0.1)
+            {
+                MouseClicked((int)game.rightHandVector3.X, (int)game.rightHandVector3.Y);
+            }
+
             previousMouseState = mouseState;
+            previousRightHandState = rightHandState;
         }
 
         public void Draw(GameTime gameTime, SpriteBatch spriteBatch)
